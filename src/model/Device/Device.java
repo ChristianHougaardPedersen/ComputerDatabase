@@ -21,6 +21,14 @@ public class Device
     deviceID = -1;
   }
 
+  public Device(String type, String serialNumber, String purchaseDate, int deviceID)
+  {
+    setType(type);
+    setSerialNumber(serialNumber);
+    setPurchaseDate(purchaseDate);
+    setDeviceID(deviceID);
+  }
+
   private void setPurchaseDate(String purchaseDate)
   {
     if (purchaseDate.isBlank())
@@ -72,6 +80,18 @@ public class Device
   public DeviceType getDeviceType()
   {
     return deviceType;
+  }
+
+  public String getDeviceTypeString()
+  {
+    switch (deviceType)
+    {
+      case CHROMEBOOK: return "Chromebook";
+      case BIB: return "BIB";
+      case TYPE3: return "Type 3";
+      case TYPE4: return "Type 4";
+      default: return "ERROR!!";
+    }
   }
 
   public void setDeviceID(int deviceID)

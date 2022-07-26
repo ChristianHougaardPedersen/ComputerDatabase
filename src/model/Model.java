@@ -17,8 +17,13 @@ public interface Model
       String secondUserStringValue, String deviceSerialNo, String deviceType, String purchaseDate);
   void suspendLoan(int loanID);
   UserList getUserList();
+
+  //todo - maybe delete this??
   ArrayList<User> getUsersByType(String userType);
   DeviceList getDeviceList();
+
+  //todo - maybe delete this??
   ArrayList<Device> getDevicesByType(DeviceType deviceType);
   LoanList getLoanList();
+  LoanList getLoansByUserType(UserType userType);
 }

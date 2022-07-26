@@ -16,6 +16,13 @@ public class Loan
     loanID = -1;
   }
 
+  public Loan (User user, Device device, int loanID)
+  {
+    setUser(user);
+    setDevice(device);
+    this.loanID = loanID;
+  }
+
   public User getUser()
   {
     return user;

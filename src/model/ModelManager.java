@@ -22,6 +22,22 @@ public class ModelManager implements Model
     userList = new UserList();
     deviceList = new DeviceList();
     loanList = new LoanList();
+
+
+    addDummyData();
+  }
+
+  private void addDummyData()
+  {
+    addDevice("Chromebook", "serial1", "08/2022");
+    addDevice("Chromebook", "serial2", "08/2022");
+    addDevice("Chromebook", "serial3", "08/2022");
+    addDevice("Chromebook", "serial4", "08/2022");
+
+    addNewLoan("TestEmployee", "Employee", "TE", "serial1", "Chromebook", "08/2022");
+    addNewLoan("TestStudent", "Student", "2.a", "serial2", "Chromebook", "08/2022");
+    addNewLoan("TestRoom", "Room", null, "serial3", "Chromebook", "08/2022");
+    addNewLoan("TestSet", "Set", null, "serial4", "Chromebook", "08/2022");
   }
 
   @Override public void addDevice(String type, String serialNumber, String purchaseDate)
@@ -134,5 +150,10 @@ public class ModelManager implements Model
       default:
         throw new IllegalArgumentException("UNKNOWN USER TYPE: " + userType);
     }
+  }
+
+  @Override public LoanList getLoansByUserType(UserType userType)
+  {
+    return loanList.getLoansByUserType(userType);
   }
 }

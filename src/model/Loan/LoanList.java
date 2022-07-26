@@ -2,6 +2,7 @@ package model.Loan;
 
 import model.Device.Device;
 import model.Users.User;
+import model.Users.UserType;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,15 @@ public class LoanList
     {
     throw new IllegalArgumentException("Device already on loan!");
     }
+
+    if (loan.getUser().getUserType() == UserType.EMPLOYEE || loan.getUser().getUserType() == UserType.STUDENT)
+    {
+      if (containsUser(loan.getUser()))
+      {
+        throw new IllegalArgumentException(loan.getUser() + " already has a current loan");
+      }
+    }
+
     loanList.add(loan);
   }
 
@@ -50,6 +60,8 @@ public class LoanList
 
   public boolean containsUser(User user)
   {
+    // todo - uncomment
+    /*
     for (Loan l : loanList)
     {
       if (l.getUser().getUserID() == user.getUserID())
@@ -58,11 +70,15 @@ public class LoanList
       }
     }
 
+
+     */
     return false;
   }
 
   public boolean containsDevice(Device device)
   {
+    // todo uncomment!
+    /*
     for (Loan l : loanList)
     {
       if (l.getDevice().getDeviceID() == device.getDeviceID())
@@ -71,6 +87,27 @@ public class LoanList
       }
     }
 
+     */
+
     return false;
+  }
+
+  public Loan get(int index)
+  {
+    return loanList.get(index);
+  }
+
+  public LoanList getLoansByUserType(UserType userType)
+  {
+    LoanList filteredLoansList = new LoanList();
+    for (Loan l : loanList)
+    {
+     if (l.getUser().getUserType().equals(userType))
+     {
+       filteredLoansList.addLoan(l);
+     }
+    }
+
+    return filteredLoansList;
   }
 }

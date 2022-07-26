@@ -6,7 +6,13 @@ public class Employee extends User
 
   public Employee(String name, String initials)
   {
-    super(UserType.EMPLOYEE, name);
+    super(UserType.EMPLOYEE, name, initials);
+    setInitials(initials);
+  }
+
+  public Employee(String name, String initials, int userID)
+  {
+    super(UserType.EMPLOYEE, name, userID);
     setInitials(initials);
   }
 

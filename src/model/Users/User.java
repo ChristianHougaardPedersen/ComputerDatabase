@@ -3,14 +3,23 @@ package model.Users;
 public abstract class User
 {
   private String name;
+  private String secString;
   private UserType userType;
   private int userID;
 
-  public User(UserType userType, String name)
+  public User(UserType userType, String name, String secString)
   {
     setName(name);
     setUserType(userType);
+    this.secString = secString;
     userID = -1;
+  }
+
+  public User(UserType userType, String name, int userID)
+  {
+    setName(name);
+    setUserType(userType);
+    setUserID(userID);
   }
 
   private void setUserType(UserType userType)
@@ -37,6 +46,11 @@ public abstract class User
   public String getName()
   {
     return name;
+  }
+
+  public String getSecString()
+  {
+    return secString;
   }
 
   public String toString()

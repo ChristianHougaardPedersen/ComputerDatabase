@@ -6,7 +6,12 @@ public class Student extends User
 
   public Student(String name, String studentClass)
   {
-    super(UserType.STUDENT, name);
+    super(UserType.STUDENT, name, studentClass);
+  }
+
+  public Student(String name, String studentClass, int studentID)
+  {
+    super(UserType.STUDENT, name, studentID);
     setStudentClass(studentClass);
   }
 

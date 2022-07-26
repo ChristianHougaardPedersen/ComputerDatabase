@@ -14,13 +14,13 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoanOverViewController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/StensballeSkolenLogoKorrektStørrelse.png" />
+                  <Image url="/images/StensballeSkolenLogoKorrektStørrelse.png" />
                </image>
             </ImageView>
             <Label contentDisplay="CENTER" prefHeight="150.0" prefWidth="1520.0" style="-fx-alignment: center;" text="Udlån" textAlignment="CENTER">
@@ -30,7 +30,7 @@
             </Label>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/Computer_clipart.png" />
+                  <Image url="/images/Computer_clipart.png" />
                </image>
             </ImageView>
          </children>
